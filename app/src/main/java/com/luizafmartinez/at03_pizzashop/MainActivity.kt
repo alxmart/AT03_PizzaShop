@@ -1,6 +1,7 @@
 package com.luizafmartinez.at03_pizzashop
 
 import android.os.Bundle
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -16,7 +17,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        //setContentView(R.layout.activity_main)
         setContentView(binding.root)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -25,4 +25,31 @@ class MainActivity : AppCompatActivity() {
             insets
         }
     }
+
+    fun onPlaceOrderButtonClicked(view: View) {
+
+        var pizzaSizePrice = 0.0
+        var toppingsTotal = 0.0
+
+        when {
+            binding.smallpizza.isChecked -> pizzaSizePrice = 5.0
+            binding.mediumpizza.isChecked -> pizzaSizePrice = 7.0
+            binding.largepizza.isChecked -> pizzaSizePrice = 9.0
+        }
+
+        if (binding.OnionsCheckBox.isChecked) {
+            toppingsTotal += 1
+        }
+
+        if (binding.OlivesCheckBox.isChecked) {
+            toppingsTotal += 2
+        }
+
+        if (binding.TomatoesCheckBox.isChecked) {
+            toppingsTotal += 3
+        }
+
+        binding.totalPrice.text = "Total Order Price= $" + (pizzaSizePrice + toppingsTotal)
+    }
+
 }

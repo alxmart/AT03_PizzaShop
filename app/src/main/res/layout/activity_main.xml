@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:text="@string/resTextTitle"
+        android:textColor="#ED0B0B"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,6 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:contentDescription="Pizza image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,15 +37,18 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="32dp"
         android:text="@string/resTextChoose"
+        android:textColor="#009688"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -60,22 +65,106 @@
             android:layout_height="match_parent">
 
             <RadioButton
-                android:id="@+id/radioButton"
+                android:id="@+id/smallpizza"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="RadioButton" />
+                android:text="@string/smallpizza"
+                android:onClick="onPlaceOrderButtonClicked"
+                android:textStyle="bold" />
 
             <RadioButton
-                android:id="@+id/radioButton2"
+                android:id="@+id/mediumpizza"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="RadioButton" />
+                android:text="@string/mediumpizza"
+                android:onClick="onPlaceOrderButtonClicked"
+                android:textStyle="bold" />
 
             <RadioButton
-                android:id="@+id/radioButton3"
+                android:id="@+id/largepizza"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="RadioButton" />
+                android:text="@string/largepizza"
+                android:onClick="onPlaceOrderButtonClicked"
+                android:textStyle="bold" />
         </RadioGroup>
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/choose_toppings"
+        android:textColor="#009688"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <CheckBox
+        android:id="@+id/OnionsCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/onions_1"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/OlivesCheckBox"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        android:onClick="onPlaceOrderButtonClicked"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <CheckBox
+        android:id="@+id/OlivesCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/olives_2"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/OnionsCheckBox"
+        app:layout_constraintEnd_toStartOf="@+id/TomatoesCheckBox"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/OnionsCheckBox"
+        android:onClick="onPlaceOrderButtonClicked"
+        app:layout_constraintTop_toTopOf="@+id/OnionsCheckBox" />
+
+    <CheckBox
+        android:id="@+id/TomatoesCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tomatoes_3"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/OlivesCheckBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/OlivesCheckBox"
+        android:onClick="onPlaceOrderButtonClicked"
+        app:layout_constraintTop_toTopOf="@+id/OlivesCheckBox" />
+
+    <Button
+        android:id="@+id/orderButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:onClick="onPlaceOrderButtonClicked"
+        android:text="Place your order"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/OlivesCheckBox" />
+
+    <TextView
+        android:id="@+id/totalPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:textColor="#E91E63"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/orderButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>

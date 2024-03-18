@@ -2,4 +2,11 @@
     <string name="app_name">AT03_PizzaShop</string>
     <string name="resTextTitle">Android Pizza Shop</string>
     <string name="resTextChoose">Choose your Pizza Size</string>
+    <string name="smallpizza">Small ($ 5)</string>
+    <string name="mediumpizza">Medium ($ 7)</string>
+    <string name="largepizza">Large ($ 9)</string>
+    <string name="onions_1">Onions ($ 1)</string>
+    <string name="olives_2">Olives ($ 2)</string>
+    <string name="tomatoes_3">Tomatoes ($ 3)</string>
+    <string name="choose_toppings">Choose your Toppings:</string>
 </resources>
