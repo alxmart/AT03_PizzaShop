@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">AT03_PizzaShop</string>
     <string name="resTextTitle">Android Pizza Shop</string>
+    <string name="resTextChoose">Choose your Pizza Size</string>
 </resources>
